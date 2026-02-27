@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 const Footer = () => {
     return (
         <div className='bg-gray-900 w-full pt-10 overflow-hidden px-4 md:px-20 lg:px-32 mt-14' id='Footer'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-white text-left container mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-white text-left container mx-auto'>
                 <div>
                     <img src={assets.logo_dark} alt="" />
                     <p className='my-4 text-gray-400'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
