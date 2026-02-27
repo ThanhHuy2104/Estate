@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { assets } from '../assets/assets'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     const [showMobileMenu, setshowMobileMenu] = useState(false);
 
     useEffect(() => {
-        if(showMobileMenu){
+        if (showMobileMenu) {
             document.body.style.overflow = 'hidden'
         } else {
             document.body.style.overflow = 'auto'
@@ -14,7 +15,7 @@ const NavBar = () => {
         return () => {
             document.body.style.overflow = 'auto'
         };
-    },[showMobileMenu])
+    }, [showMobileMenu])
     return (
         <div className='absolute top-0 left-0 w-full z-10'>
             <div className='flex justify-between
@@ -30,7 +31,7 @@ const NavBar = () => {
                     <a href="#Testimonials" className='cursor-pointer
                 hover:text-gray-400'>Testimonials</a>
                 </ul>
-                <button className='hidden md:block bg-white px-8 py-2 rounded-full'>Sign Up</button>
+                <Link to='/login' className='hidden md:block bg-white px-8 py-2 rounded-full'>Login</Link>
                 <img onClick={() => setshowMobileMenu(true)} src={assets.menu_icon} className="md:hidden w-7 cursor-pointer" alt="" />
             </div>
             {/* Mobile Menu */}
@@ -44,6 +45,8 @@ const NavBar = () => {
                     <a onClick={() => setshowMobileMenu(false)} href="#About" className='px-4 py-2 rounded-full inline-block'>About</a>
                     <a onClick={() => setshowMobileMenu(false)} href="#Projects" className='px-4 py-2 rounded-full inline-block'>Projects</a>
                     <a onClick={() => setshowMobileMenu(false)} href="#Testimonials" className='px-4 py-2 rounded-full inline-block'>Testimonials</a>
+                    <Link onClick={() => setshowMobileMenu(false)} to='/login' className='px-10 py-2 rounded-full inline-block bg-blue-500'>Login</Link>
+
                 </ul>
             </div>
         </div>
